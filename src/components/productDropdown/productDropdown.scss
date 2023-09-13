@@ -1,0 +1,53 @@
+select:disabled {
+  background-color: rgba(3, 92, 92, 0.322);
+  cursor: not-allowed;
+}
+select {
+  width: 100%;
+  outline: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  border: none;
+  box-shadow: 2px 4px 10px 1px rgba(2, 58, 97, 0.251);
+
+  border-bottom: 1px solid rgba(0, 115, 255, 0.459);
+  &::after {
+    content: "\25BC"; /* Unicode down arrow character */
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    font-size: 12px;
+  }
+  &:hover {
+    transform: scale(1.02);
+  }
+
+  /* Style the dropdown options */
+  option {
+    background-color: white;
+    color: #333;
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  /* Style the selected option */
+  option:checked {
+    background-color: #007bff;
+    color: white;
+  }
+  // option {
+  //   height: 50px;
+  // }
+}
+
+.custom-select__menu {
+  position: absolute;
+  top: 11px; /* Adjust this value as needed */
+  z-index: 3; /* Adjust this value as needed */
+}
+
+.product-dropdown-container {
+  position: relative; /* Make the container relative */
+  z-index: 999; /* Ensure it's above other elements */
+}
